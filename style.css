@@ -1,0 +1,294 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap");
+@font-face {
+  font-family: "Pokemon Solid";
+  src: url("./assets/Pokemon\ Solid.ttf");
+}
+.tracking-in-expand {
+  font-family: "Pokemon Solid", sans-serif;
+  color: rgb(235, 210, 52);
+  font-size: 4rem;
+  text-shadow: -9px 5px 5px #ce5937;
+  -webkit-animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.61, 0.355, 1)
+    both;
+  animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+}
+
+p,
+h2,
+h3,
+h4,
+h5,
+a,
+span {
+  font-family: "Source Code Pro", monospace;
+  color: white;
+  /* color: #fc6603; */
+  font-weight: bold;
+}
+
+@-webkit-keyframes tracking-in-expand {
+  0% {
+    letter-spacing: -0.5em;
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes tracking-in-expand {
+  0% {
+    letter-spacing: -0.5em;
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.container {
+  max-width: 80%;
+  margin: 0 auto;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.ordenateList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.card {
+  display: inline-block;
+  background-color: #eee;
+  opacity: 1;
+  border-radius: 20px;
+  box-shadow: 0 3px 15px rgba(100, 100, 100, 0.5);
+  margin: 20px;
+  padding: 20px;
+  text-align: center;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border: solid 10px rgb(235, 210, 52);
+  transition: transform 1s ease-out;
+  transition: ease all 1s;
+
+  /* animation:float 1.3s ease-in-out infinite; */
+}
+
+@keyframes MoveUpDown {
+  0%,
+  100% {
+    bottom: 0;
+  }
+  50% {
+    bottom: 5px;
+  }
+}
+
+.card:hover {
+  transform: scale(1.1);
+  animation: MoveUpDown 1s linear infinite;
+  transform-style: preserve-3d;
+  transition: transform 1s ease-out;
+  /* transform: rotateY(0deg); */
+  position: relative;
+  -webkit-transform-style: preserve-3d;
+}
+
+.card .imageContainer {
+  background-color: rgba(255, 255, 255, 0);
+  border-radius: 50%;
+  width: 200px;
+  max-height: 200px;
+  text-align: center;
+}
+
+.pokeImg {
+  max-width: 200px;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  margin: 5px;
+}
+
+#myBtn {
+  display: none; /* Hidden by default */
+  position: fixed; /* Fixed/sticky position */
+  bottom: 20px; /* Place the button at the bottom of the page */
+  right: 30px; /* Place the button 30px from the right */
+  z-index: 99; /* Make sure it does not overlap */
+  border: none; /* Remove borders */
+  outline: none; /* Remove outline */
+  background-color: red; /* Set a background color */
+  color: white; /* Text color */
+  cursor: pointer; /* Add a mouse pointer on hover */
+  padding: 15px; /* Some padding */
+  border-radius: 10px; /* Rounded corners */
+  font-size: 18px; /* Increase font size */
+}
+#myBtn:hover {
+  background-color: #555; /* Add a dark-grey background on hover */
+  scroll-behavior: smooth;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-image: url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/2fb2821a-1406-4a1d-9b04-6668f278e944/d843okx-eb13e8e4-0fa4-4fa9-968a-e0f36ff168de.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzJmYjI4MjFhLTE0MDYtNGExZC05YjA0LTY2NjhmMjc4ZTk0NFwvZDg0M29reC1lYjEzZThlNC0wZmE0LTRmYTktOTY4YS1lMGYzNmZmMTY4ZGUucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.TIK_E5L8dTyBUk_dADA5WkLP8jSJMR7YGJG54KNAido");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+}
+
+.pokeball {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  background: #fff;
+  border: 10px solid #000;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: inset -10px 10px 0 10px #ccc;
+  animation: fall 0.25s ease-in-out,
+    shake 1.25s cubic-bezier(0.36, 0.07, 0.19, 0.97) 3;
+  display: none; /* Hidden by default */
+  position: fixed; /* Fixed/sticky position */
+  bottom: 20px; /* Place the button at the bottom of the page */
+  right: 30px; /* Place the button 30px from the right */
+  z-index: 99; /* Make sure it does not overlap */
+}
+.pokeball::before,
+.pokeball::after {
+  content: "";
+  position: absolute;
+}
+.pokeball::before {
+  background: red;
+  width: 100%;
+  height: 50%;
+}
+.pokeball::after {
+  top: calc(50% - 10px);
+  width: 100%;
+  height: 20px;
+  background: #000;
+}
+
+.pokeball__button {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 10px;
+  height: 10px;
+  background: #7f8c8d;
+  border: 10px solid #fff;
+  border-radius: 50%;
+  z-index: 10;
+  box-shadow: 0 0 0 10px black;
+  animation: blink 0.5s alternate 7;
+}
+/* Animation */
+@keyframes blink {
+  from {
+    background: #eee;
+  }
+  to {
+    background: #e74c3c;
+  }
+}
+@keyframes shake {
+  0% {
+    transform: translate(0, 0) rotate(0);
+  }
+  20% {
+    transform: translate(-10px, 0) rotate(-20deg);
+  }
+  30% {
+    transform: translate(10px, 0) rotate(20deg);
+  }
+  50% {
+    transform: translate(-10px, 0) rotate(-10deg);
+  }
+  60% {
+    transform: translate(10px, 0) rotate(10deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(0);
+  }
+}
+@keyframes fall {
+  0% {
+    top: -200px;
+  }
+  60% {
+    top: 0;
+  }
+  80% {
+    top: -20px;
+  }
+  100% {
+    top: 0;
+  }
+}
+
+.pokeSearch {
+  font-size: 2rem;
+  font-family: "Source Code Pro", monospace;
+  color: white;
+  border-radius: 2px;
+  text-align: center;
+  padding: 8px;
+  width: 250px;
+  height: 28px;
+  line-height: 16px;
+  margin: auto;
+  background: rgba(100, 100, 100, 0);
+  border: 1px solid rgb(235, 210, 52);
+  box-shadow: 0 1px 0 1px black, inset 0 1px 0 1px black, 0 0 0 1px black,
+    inset 0 0 0 1px black;
+    
+}
+
+.pokeSearch::placeholder{
+  font-family: "Source Code Pro", monospace;
+  color: whitesmoke;
+  font-size: 1rem;
+  text-align: center;
+  
+}
+
+.pokeSearch > i {
+  width: 0;
+  height: 0;
+  border: 5px solid transparent;
+  border-top-color: black;
+  margin-top: 23px;
+  animation: bounce 0.5s ease-in-out 1 infinite alternate;
+  float: right;
+}
+
+@keyframes bounce {
+  from {
+    margin-top: 20px;
+  }
+  to {
+    margin-top: 23px;
+  }
+}
